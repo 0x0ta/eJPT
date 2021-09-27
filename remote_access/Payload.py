@@ -1,7 +1,6 @@
 import socket as sk
 import platform as pf
 import os
-import subprocess
 
 ConnectionString = {"IPAddress": "192.168.0.49", "IPPort": 6666}
 
