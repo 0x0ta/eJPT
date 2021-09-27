@@ -5,14 +5,14 @@ import os
 ConnectionString = {"IPAddress": "192.168.0.49", "IPPort": 6666}
 
 def get_platform():
-	# TODO: Implement platform detection fro adding users functionality
+	# TODO: Implement platform detection for adding users functionality
 	os = pf.platform()
 	if platform == "windows":
 		print(f"platform is: {os}")
 	elif platform == "linux":
-		print(f"platform is {os}")
+		print(f"platform is: {os}")
 	elif platform == "osx":
-		print(f"platform is {os}")
+		print(f"platform is: {os}")
 
 def Main():
 	IPAddress = ConnectionString.get("IPAddress")
@@ -27,13 +27,11 @@ def Main():
 			try:
 				data = connection.recv(1024)
 			except:continue
-
 			if(data.decode('utf-8') == '1'):
 				OS = pf.platform()
 				Machine = pf.machine()
 				Proc = pf.processor()
 				uname = pf.uname()
-
 				connection.send(f'OS: \t\t{OS}\r\nMachine: \t{Machine}\r\nProcessor: \t{Proc}\r\nNode: \t\t{uname[1]}'.encode())
 			elif(data.decode('utf-8') == '2'):
 				data = connection.recv(1024)
