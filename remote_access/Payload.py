@@ -43,9 +43,12 @@ def Main():
 				except:
 					tosend = f"Command: {data.decode('utf-8')} did not complete"
 				connection.send(tosend.encode())
+			elif(data.decode('utf-8') == '4'):
+				data = connection.recv(1024)
+				prompt = 'Functionality not yet implemented'
+				connection.send(prompt.encode())
 			elif(data.decode('utf-8') == '0'):
 				connection.close()
-				connection, address = s.accept()
 				break
 
 Main()
