@@ -4,6 +4,16 @@ import os
 
 ConnectionString = {"IPAddress": "192.168.0.49", "IPPort": 6666}
 
+def get_platform():
+	# TODO: Implement platform detection fro adding users functionality
+	os = pf.platform()
+	if platform == "windows":
+		print(f"platform is: {os}")
+	elif platform == "linux":
+		print(f"platform is {os}")
+	elif platform == "osx":
+		print(f"platform is {os}")
+
 def Main():
 	IPAddress = ConnectionString.get("IPAddress")
 	IPPort = ConnectionString.get("IPPort")
