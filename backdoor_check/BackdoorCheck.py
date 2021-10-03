@@ -1,6 +1,5 @@
 import requests as req
 import time
-import keyboard
 
 def main():
 	print("*"*40)
@@ -13,7 +12,5 @@ def main():
 			resp = req.request('GET', f'https://{server}/{x}')
 			if resp.status_code == 200:
 				print(f"{x}: Found on {server} @ {server}/{x}")
-			#else:
-			# 	print(f"{x}: Not found on {server}")
-
+				
 main()
