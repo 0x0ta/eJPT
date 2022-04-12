@@ -6,7 +6,7 @@ def Main():
     IPTarget = input("Enter IP Address to connect to: ")
     PortTarget = int(input("Enter Port to connect to: "))
     ConnTarget = SocketConnect(IPTarget, PortTarget)
-    if ConnTarget != None:
+    if ConnTarget is not None:
         Menu(ConnTarget)
 
 
